@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/yannisalexiou/movie-bot/issues"
   },
-  "homepage": "https://github.com/yannisalexiou/movie-bot#readme"
+  "homepage": "https://github.com/yannisalexiou/movie-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.2",
+    "request": "^2.83.0"
+  }
 }
