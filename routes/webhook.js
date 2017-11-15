@@ -27,5 +27,33 @@ router.get('/', (req, res) => {
   }
 });
 
+// All callbacks for Messenger will be POST-ed here
+router.post('/', (req, res) => {
+  let body = req.body;
+
+  // Checks this is an event from a page subscription
+  if (body.object === "page") {
+
+    // Iterate over each entry
+    // There may be multiple entries if batched
+    body.entry.forEach(function(entry) {
+
+      // Iterate over each messaging event
+      entry.messaging.forEach(function(event) {
+
+        if (event.message) {
+          console.log("message event");
+        }
+        if (event.postback) {
+          console.log("postback event");
+          processPostback(event);
+        }
+      });
+    });
+
+    res.sendStatus(200);
+  }
+});
+
 
 module.exports = router;
