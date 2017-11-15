@@ -23,7 +23,7 @@ function handlePostback(event) {
         name = bodyObj.first_name;
         greeting = "Hi " + name + ". ";
       }
-      var message = greeting + "My name is SP Movie Bot. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
+      var message = greeting + "My name is Première. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
       var response = {text: message}
       callSendAPI(senderId, response);
     });
