@@ -1,0 +1,12 @@
+{
+  "test": {
+    "PORT": 3000,
+    "MONGODB_URI": "mongodb://localhost:27017/UniversityOfTheAegeanStruct",
+    "PAGE_ACCESS_TOKEN": "EAAcTxHLQLZCsBAFPZBuI4rMBfZCVRxzZCoVCJB3h0xjgCCBrZBFASFoXYX96xjKomEZC6ZCz7SWaCZAe0x6XMAZAMyiR6miNUHSzf2FRL9vLbNOuY8BFtZCiZBm049Wai4rseU021k3Iz7YadOWLgIcC4csjxVxTc579bwO1LgYgmWKvgZDZD"
+  },
+  "development": {
+    "PORT": 3000,
+    "MONGODB_URI": "mongodb://localhost:27017/UniversityOfTheAegeanStruct",
+    "PAGE_ACCESS_TOKEN": "EAAcTxHLQLZCsBAFPZBuI4rMBfZCVRxzZCoVCJB3h0xjgCCBrZBFASFoXYX96xjKomEZC6ZCz7SWaCZAe0x6XMAZAMyiR6miNUHSzf2FRL9vLbNOuY8BFtZCiZBm049Wai4rseU021k3Iz7YadOWLgIcC4csjxVxTc579bwO1LgYgmWKvgZDZD"
+  }
+}
