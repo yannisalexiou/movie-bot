@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+//handler functions
+const facebookApi = require('./../api/facebook');
+
 // Facebook Webhook
 // Used for verification
 router.get('/', (req, res) => {
@@ -46,7 +49,7 @@ router.post('/', (req, res) => {
         }
         if (event.postback) {
           console.log("postback event");
-          processPostback(event);
+          facebookApi.processPostback(event);
         }
       });
     });
