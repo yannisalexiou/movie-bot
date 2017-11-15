@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
         }
         if (event.postback) {
           console.log("postback event");
-          facebookApi.processPostback(event);
+          facebookApi.handlePostback(event);
         }
       });
     });
