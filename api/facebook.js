@@ -112,7 +112,7 @@ function getMovieDetail(userId, field) {
 }
 
 function findMovie(userId, movieTitle) {
-  request("http://www.omdbapi.com/?type=movie&t=" + movieTitle, function (error, response, body) {
+  request("http://www.omdbapi.com/?type=movie&t=" + movieTitle + "&apikey=6deb93e6", function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var movieObj = JSON.parse(body);
       if (movieObj.Response === "True") {
