@@ -129,7 +129,7 @@ function findMovie(userId, movieTitle) {
           poster_url:movieObj.Poster
         };
         var options = {upsert: true};
-        Movie.findOneAndUpdate(query, update, options, function(err, mov) {
+        Movies.findOneAndUpdate(query, update, options, function(err, mov) {
           if (err) {
             console.log("Database error: " + err);
           } else {
