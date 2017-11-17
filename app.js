@@ -1,10 +1,15 @@
+//An app from
+//https://www.sitepoint.com/building-facebook-chat-bot-node-heroku/
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
 require('./config/config');
 
-//An app from
-//https://www.sitepoint.com/building-facebook-chat-bot-node-heroku/
+var {mongoose} = require('./db/mongoose');
+
+// Load Models
+require('./models/Movie');
 
 // Load Routes
 const index = require('./routes/index');

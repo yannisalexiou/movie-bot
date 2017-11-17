@@ -46,6 +46,7 @@ router.post('/', (req, res) => {
 
         if (event.message) {
           console.log("message event");
+          facebookApi.handleMessage(event);
         }
         if (event.postback) {
           console.log("postback event");
