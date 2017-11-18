@@ -50,7 +50,7 @@ function handlePostback(event) {
     // and include it in the greeting
     var name = facebookApi.getUserName(senderId);
     if (name !== false) {
-      var greeting = "Hi " + name ". ";
+      var greeting = "Hi " + name + ". ";
       var message = greeting + "My name is Première. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
       var response = {text: message}
       facebookApi.sendMessage(senderId, response);
@@ -159,6 +159,5 @@ function findMovie(userId, movieTitle) {
 
 module.exports = {
   handleMessage,
-  handlePostback,
-  callSendAPI
+  handlePostback
 }
