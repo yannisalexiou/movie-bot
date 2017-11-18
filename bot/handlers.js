@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Movies = mongoose.model('movies');
 
 const facebookApi = require('./../bot/facebookApi');
+const messageTemplate = require('./../bot/messageTemplate')
 
 function handleMessage(event) {
   //This callback will occur when a message has been sent by your page
@@ -36,7 +37,7 @@ function handleMessage(event) {
           findMovie(senderId, formattedMsg);
       }
     } else if (message.attachments) {
-      facebookApi.sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+      facebookApi.sendMessage(senderId, messageTemplate.badRequest());
     }
   }
 }
@@ -50,9 +51,9 @@ function handlePostback(event) {
     // and include it in the greeting
     facebookApi.getStarted(senderId);
   }  else if (payload === "Correct") {
-    facebookApi.sendMessage(senderId, {text: "Awesome! What would you like to find out? Enter 'plot', 'date', 'runtime', 'director', 'cast' or 'rating' for the various details."});
+    facebookApi.sendMessage(senderId, messageTemplate.correctMovie());
   } else if (payload === "Incorrect") {
-    facebookApi.sendMessage(senderId, {text: "Oops! Sorry about that. Try using the exact title of the movie"});
+    facebookApi.sendMessage(senderId, messageTemplate.incorrectMovie());
   }
 }
 
