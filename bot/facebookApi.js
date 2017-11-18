@@ -26,7 +26,7 @@ function sendMessage(senderPsid, response) {
   });
 }
 
-function getUserName(senderId) {
+function getStarted(senderId) {
   // Get user's first name from the User Profile API
   // and include it in the greeting
   request({
@@ -56,5 +56,5 @@ function getUserName(senderId) {
 
 module.exports = {
   sendMessage,
-  getUserName
+  getStarted
 }
