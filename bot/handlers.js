@@ -95,7 +95,7 @@ function findMovie(userId, movieTitle) {
             var subtitle = "Is this the movie you are looking for?";
             var imageUrl = movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster;
             var correctPayload = "Correct";
-            var incorrectPayload = "Incorrect"''
+            var incorrectPayload = "Incorrect";
             facebookApi.sendMessage(userId, messageTemplate.movieCard(title, subtitle, imageUrl, correctPayload, incorrectPayload));
           }
         });
