@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Movies = mongoose.model('movies');
 
 const facebookApi = require('./../bot/facebookApi');
-const messageTemplate = require('./../bot/messageTemplate')
+const messageTemplate = require('./../bot/messageTemplates')
 
 function handleMessage(event) {
   //This callback will occur when a message has been sent by your page

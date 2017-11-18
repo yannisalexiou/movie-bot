@@ -23,3 +23,9 @@ function incorrectMovie() {
 
   return incorrectMovie;
 }
+
+module.exports = {
+  badRequest,
+  correctMovie,
+  incorrectMovie
+}
