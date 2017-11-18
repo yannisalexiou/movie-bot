@@ -37,10 +37,10 @@ function getUserName(senderId) {
     },
     method: "GET"
   }, function(err, res, body) {
-    var greeting = "";
     if (!err) {
       var bodyObj = JSON.parse(body);
       name = bodyObj.first_name;
+      console.log("USERNAME: " + name);
       return name;
     } else {
       console.log(".::getUserName::. Error geting User Name: " + err);
