@@ -55,6 +55,8 @@ function movieCard(title, subtitle, imageUrl, correctPayload, incorrectPayload) 
       }
     }
   };
+
+  return movieCard;
 }
 
 module.exports = {
