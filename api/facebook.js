@@ -49,6 +49,7 @@ function handlePostback(event) {
     // Get user's first name from the User Profile API
     // and include it in the greeting
     var name = facebookApi.getUserName(senderId);
+    console.log("handlePostback USERNAME: " + name);
     if (name !== false) {
       var greeting = "Hi " + name + ". ";
       var message = greeting + "My name is Première. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
