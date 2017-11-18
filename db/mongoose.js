@@ -6,4 +6,4 @@ mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-module.exports = {mongoose};
+module.exports = {mongoose}; 
