@@ -40,11 +40,16 @@ function getUserName(senderId) {
     if (!err) {
       var bodyObj = JSON.parse(body);
       name = bodyObj.first_name;
-      console.log("USERNAME: " + name);
-      return name;
+      var greeting = "Hi " + name + ". ";
+      var message = greeting + "My name is Première. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
+      var response = {text: message}
+      sendMessage(senderId, response);
     } else {
       console.log(".::getUserName::. Error geting User Name: " + err);
-      return false;
+      var greeting = "Hello Stranger. ";
+      var message = greeting + "My name is Première. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
+      var response = {text: message}
+      sendMessage(senderId, response);
     }
   });
 }

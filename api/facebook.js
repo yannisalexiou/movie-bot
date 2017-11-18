@@ -48,14 +48,7 @@ function handlePostback(event) {
   if (payload === "Greeting") {
     // Get user's first name from the User Profile API
     // and include it in the greeting
-    var name = facebookApi.getUserName(senderId);
-    console.log("handlePostback USERNAME: " + name);
-    if (name !== false) {
-      var greeting = "Hi " + name + ". ";
-      var message = greeting + "My name is Première. I can tell you various details regarding movies. What movie would you like to know about? 🧐";
-      var response = {text: message}
-      facebookApi.sendMessage(senderId, response);
-    }
+    facebookApi.getStarted(senderId);
   }  else if (payload === "Correct") {
     callSendAPI(senderId, {text: "Awesome! What would you like to find out? Enter 'plot', 'date', 'runtime', 'director', 'cast' or 'rating' for the various details."});
   } else if (payload === "Incorrect") {
