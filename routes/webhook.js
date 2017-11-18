@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //handler functions
-const facebookApi = require('./../api/facebook');
+const handler = require('./../bot/handlers');
 
 // Facebook Webhook
 // Used for verification
@@ -46,11 +46,11 @@ router.post('/', (req, res) => {
 
         if (event.message) {
           console.log("message event");
-          facebookApi.handleMessage(event);
+          handler.handleMessage(event);
         }
         if (event.postback) {
           console.log("postback event");
-          facebookApi.handlePostback(event);
+          handler.handlePostback(event);
         }
       });
     });
