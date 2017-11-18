@@ -104,7 +104,7 @@ function findMovie(userId, movieTitle) {
           facebookApi.sendMessage(userId, {text: movieObj.Error});
       }
     } else {
-      facebookApi.sendMessage(userId, {text: "Something went wrong. Try again."});
+      facebookApi.sendMessage(userId, messageTemplate.wentWrong());
     }
   });
 }
