@@ -24,8 +24,43 @@ function incorrectMovie() {
   return incorrectMovie;
 }
 
+function wentWrong() {
+  var wentWrong = {
+    text: "Something went wrong. Try again"
+  }
+
+  return wentWrong;
+}
+
+function movieCard(title, subtitle, imageUrl, correctPayload, incorrectPayload) {
+  var movieCard = {
+    attachment: {
+      type: "template",
+      payload: {
+        template_type: "generic",
+        elements: [{
+          title: title,
+          subtitle: subtitle,
+          image_url: imageUrl,
+          buttons: [{
+            type: "postback",
+            title: "Yes",
+            payload: correctPayload
+          }, {
+            type: "postback",
+            title: "No",
+            payload: incorrectPayload
+          }]
+        }]
+      }
+    }
+  };
+}
+
 module.exports = {
   badRequest,
   correctMovie,
-  incorrectMovie
+  incorrectMovie,
+  wentWrong,
+  movieCard
 }

@@ -65,7 +65,7 @@ function getMovieDetail(userId, field) {
     facebookApi.sendMessage(userId, {text: movie[field]});
   })
   .catch((e) => {
-    facebookApi.sendMessage(userId, {text: "Something went wrong. Try again"});
+    facebookApi.sendMessage(userId, messageTemplate.wentWrong());
   })
 }
 
@@ -91,29 +91,12 @@ function findMovie(userId, movieTitle) {
           if (err) {
             console.log("Database error: " + err);
           } else {
-            message = {
-              attachment: {
-                type: "template",
-                payload: {
-                  template_type: "generic",
-                  elements: [{
-                    title: movieObj.Title,
-                    subtitle: "Is this the movie you are looking for?",
-                    image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
-                    buttons: [{
-                      type: "postback",
-                      title: "Yes",
-                      payload: "Correct"
-                    }, {
-                      type: "postback",
-                      title: "No",
-                      payload: "Incorrect"
-                    }]
-                  }]
-                }
-              }
-            };
-            facebookApi.sendMessage(userId, message);
+            var title = movieObj.Title
+            var subtitle = "Is this the movie you are looking for?";
+            var imageUrl = movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster;
+            var correctPayload = "Correct";
+            var incorrectPayload = "Incorrect"''
+            facebookApi.sendMessage(userId, messageTemplate.movieCard(title, subtitle, imageUrl, correctPayload, incorrectPayload));
           }
         });
       } else {
