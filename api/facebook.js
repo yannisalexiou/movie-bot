@@ -36,7 +36,7 @@ function handleMessage(event) {
           findMovie(senderId, formattedMsg);
       }
     } else if (message.attachments) {
-      callSendAPI(senderId, {text: "Sorry, I don't understand your request."});
+      facebookApi.sendMessage(senderId, {text: "Sorry, I don't understand your request."});
     }
   }
 }
@@ -50,47 +50,21 @@ function handlePostback(event) {
     // and include it in the greeting
     facebookApi.getStarted(senderId);
   }  else if (payload === "Correct") {
-    callSendAPI(senderId, {text: "Awesome! What would you like to find out? Enter 'plot', 'date', 'runtime', 'director', 'cast' or 'rating' for the various details."});
+    facebookApi.sendMessage(senderId, {text: "Awesome! What would you like to find out? Enter 'plot', 'date', 'runtime', 'director', 'cast' or 'rating' for the various details."});
   } else if (payload === "Incorrect") {
-    callSendAPI(senderId, {text: "Oops! Sorry about that. Try using the exact title of the movie"});
+    facebookApi.sendMessage(senderId, {text: "Oops! Sorry about that. Try using the exact title of the movie"});
   }
 }
-
-// function callSendAPI(senderPsid, response) {
-//   console.log('callSendAPI');
-//
-//   // Construct the message body
-//   let requestBody = {
-//     "recipient": {
-//       "id": senderPsid
-//     },
-//     "message": response
-//   }
-//
-//   // Send the HTTP request to the Messenger Platform
-//   request({
-//     "uri": "https://graph.facebook.com/v2.6/me/messages",
-//     "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
-//     "method": "POST",
-//     "json": requestBody
-//   }, (err, res, body) => {
-//     if (!err) {
-//       console.log('message sent!')
-//     } else {
-//       console.error("Unable to send message:" + err);
-//     }
-//   });
-// }
 
 function getMovieDetail(userId, field) {
   Movies.findOne({
     user_id: userId
   })
   .then(movie => {
-    callSendAPI(userId, {text: movie[field]});
+    facebookApi.sendMessage(userId, {text: movie[field]});
   })
   .catch((e) => {
-    callSendAPI(userId, {text: "Something went wrong. Try again"});
+    facebookApi.sendMessage(userId, {text: "Something went wrong. Try again"});
   })
 }
 
@@ -138,15 +112,15 @@ function findMovie(userId, movieTitle) {
                 }
               }
             };
-            callSendAPI(userId, message);
+            facebookApi.sendMessage(userId, message);
           }
         });
       } else {
           console.log(movieObj.Error);
-          callSendAPI(userId, {text: movieObj.Error});
+          facebookApi.sendMessage(userId, {text: movieObj.Error});
       }
     } else {
-      callSendAPI(userId, {text: "Something went wrong. Try again."});
+      facebookApi.sendMessage(userId, {text: "Something went wrong. Try again."});
     }
   });
 }
