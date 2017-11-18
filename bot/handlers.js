@@ -26,11 +26,11 @@ function handleMessage(event) {
         case "director":
         case "cast":
         case "rating":
-          getMovieDetail(senderId, formattedMsg);
+          omdb.getMovieDetail(senderId, formattedMsg);
           break;
 
         default:
-          findMovie(senderId, formattedMsg);
+          omdb.findMovie(senderId, formattedMsg);
       }
     } else if (message.attachments) {
       facebookApi.sendMessage(senderId, messageTemplate.badRequest());
