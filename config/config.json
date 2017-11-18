@@ -3,12 +3,14 @@
     "PORT": 3000,
     "MONGODB_URI": "mongodb://gioadmin:abc123@ds111066.mlab.com:11066/bot-mongodb",
     "PAGE_ACCESS_TOKEN": "EAACIKBfI6SgBAMZAoaKYGZCjNrZAg8XraYMbMyxJkCRiFtAeAn9xnMlK3tRdktBUl8vtWZBCXZB8V5GtcEHfxXkp0TaneHSzLaZB6rdn1I8G1NTUo1jydsLnVji2xzR2A4vZAx38LWHExtT6M3CbnuY2lGPKK3aOewiI6E4qzpUzAZDZD",
-    "VERIFY_TOKEN": "moviebot"
+    "VERIFY_TOKEN": "moviebot",
+    "OMBD_API_KEY": "6deb93e6"
   },
   "development": {
     "PORT": 3000,
     "MONGODB_URI": "mongodb://gioadmin:abc123@ds111066.mlab.com:11066/bot-mongodb",
     "PAGE_ACCESS_TOKEN": "EAACIKBfI6SgBAMZAoaKYGZCjNrZAg8XraYMbMyxJkCRiFtAeAn9xnMlK3tRdktBUl8vtWZBCXZB8V5GtcEHfxXkp0TaneHSzLaZB6rdn1I8G1NTUo1jydsLnVji2xzR2A4vZAx38LWHExtT6M3CbnuY2lGPKK3aOewiI6E4qzpUzAZDZD",
-    "VERIFY_TOKEN": "moviebot"
+    "VERIFY_TOKEN": "moviebot",
+    "OMBD_API_KEY": "6deb93e6"
   }
 }

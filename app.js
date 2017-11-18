@@ -1,4 +1,4 @@
-//An app from
+//An app based on
 //https://www.sitepoint.com/building-facebook-chat-bot-node-heroku/
 
 const express = require('express');
